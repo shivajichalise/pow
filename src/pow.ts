@@ -42,7 +42,10 @@ class POW {
     }
 
     public verify(nonce: number, result_hash: string): void {
+        // Verify the nonce:
         let hash = sha256.hex(nonce + this.secret_key)
+        // Above result should be equal to result_hash
+
         if (hash === result_hash) {
             console.log("Verified!")
         } else {
